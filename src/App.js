@@ -1,10 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import About from "./components/About";
 import Navbar from "./components/Navbar"
 import Textform from "./components/Textform"
 import Alert from "./components/Alert"
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // this is the one of the component
@@ -29,12 +27,12 @@ function App() {
       setMode("dark")
       document.body.style.backgroundColor = '#042743';
       showAlert("Your mode has been set to Dark","Success")
-      document.title = "TextUtils - DarkMode";
+      document.title = "Textify - DarkMode";
     }
     else{
       setMode("light")
       document.body.style.backgroundColor = 'white';
-      document.title = "TextUtils - LightMode";
+      document.title = "Textify - LightMode";
     }
   }
   return (
@@ -44,16 +42,16 @@ function App() {
     {/* passing the props */}
     <Navbar title = "Textify" mode = {Mode} togglemode = {togglemode} />
     <Alert alert ={Alert_msg}/>
-    <BrowserRouter>
+    {/* <BrowserRouter>
     <Routes>
-       <Route path ="/" element={
+       <Route path ="/" element={ */}
         <div className="container my-3">
         <Textform heading = "Enter the Text to analyse" mode = {Mode} showalert = {showAlert} />
       </div>
-       } />
+       {/* } />
        <Route path="/about" element={<About/>} />
     </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
     </>
   );
 }
